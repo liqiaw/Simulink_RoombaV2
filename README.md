@@ -97,8 +97,8 @@ place, tight left, wide left. Roomba makes a wide right if left most sensor is 1
 left middle sensor is 1 and front sensors are 0. Roomba makes a right in place if left front sensor is 1. The logic is the same for the 
 left turns but with the right sensors. The bump sensor logic is the same as V1. So are the battery level and emergency stop states.
 
-#![Alt text](relative/path/to/img.jpg?raw=true "Title")
+#![Alt text](relative/Simulink_RoombaV2/images/obstacle_avoidV2.png?raw=true "Title")
 
 See below YouTube video for a demo.
 
-[Simulink Roomba Demo](https://www.youtube.com/watch?v=0nQMwHtMGac)
+[Simulink Roomba Demo](https://www.youtube.com/watch?v=wu4hABgC39g)
