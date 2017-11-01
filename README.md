@@ -98,6 +98,7 @@ left middle sensor is 1 and front sensors are 0. Roomba makes a right in place i
 left turns but with the right sensors. The bump sensor logic is the same as V1. So are the battery level and emergency stop states.
 
 [Alt text](martin_project2/images/obstacle_avoidV2.png)
+https://github.com/spm1200/Simulink_RoombaV2/blob/master/martin_project2/images/SAMPLE_file.PNG
 
 See below YouTube video for a demo.
 
