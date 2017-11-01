@@ -60,23 +60,23 @@ algorithm which controls the left/right wheel speeds. The Roomba will Seek Dock
 if the battery falls to 10% or below; moreover, there is an emergency stop feature
 which is triggered by a push button on the Simulink file shown below. 
 
-#![Alt text](relative/path/to/img.jpg?raw=true "Title")
+![sample_file](https://user-images.githubusercontent.com/25269143/32278875-712727b4-beed-11e7-9ab5-521c59318f1c.PNG)
 
 The control alogorithm is shown below. These are the three parallel states, which will be explained in 
 detail below.
 
-#![Alt text](relative/path/to/img.jpg?raw=true "Title")
+![parallel_states](https://user-images.githubusercontent.com/25269143/32278882-78786244-beed-11e7-991a-c5f50dd4835b.PNG)
 
 The Emergency Stop state is shown below. This simply checks the input stop button, and if this goes to 3
 (via user input) then a Simulink function is called which stops the simulation, thus stopping the Roomba.
 
-#![Alt text](relative/path/to/img.jpg?raw=true "Title")
+![emergency_stop](https://user-images.githubusercontent.com/25269143/32278897-8383c3cc-beed-11e7-8c1c-acaede7eb4c1.PNG)
 
 The Battery Percentage state is shown below. This checks the charge level input from the Roomba Charge Level 
 block. If the level becomes 10 or below, the Roomba is sent a Seek Dock command via a Matlab function block. The docking variable 
 controls the Set Wheel Speed Roomba block. That is, when Seek Dock is desired, the Set Wheel Speed Roomba block is turned off.
 
-#![Alt text](relative/path/to/img.jpg?raw=true "Title")
+![battery_level](https://user-images.githubusercontent.com/25269143/32278906-885729e8-beed-11e7-8ce4-1ce337ee2e33.PNG)
 
 The Control Logic is shown below. This obstacle avoid logic goes straight, continuously checking the IR sensors and 
 bump sensors. If any IR sensor becomes 1, the Roomba stops briefly. It determines a left or right zero point turn by 
@@ -85,20 +85,21 @@ zero point turns go until all sensors are clear for a minimum of half a second. 
 engage the Roomba reverses. If left bump sensor engages the Roomba reverses and makes a right turn. If right bump sensor engages the
 Roomba reverses and makes a left turn. See below for the stateflow.
 
-#![Alt text](relative/path/to/img.jpg?raw=true "Title")
+![obstacle_avoidv1](https://user-images.githubusercontent.com/25269143/32278910-8cb7b8f4-beed-11e7-9d20-cc62ca3787c4.PNG)
 
 Another obstacle avoid alogrithm was tested. However, the Roomba's IR sensors only see objects at around a distance of 2 inches,
 so moving turns usually end in a collision with the obstacle. See the below file.
 ```
 SAMPLE_logicV2.slx
 ```
+![sample_filev2](https://user-images.githubusercontent.com/25269143/32278920-9471cf76-beed-11e7-8075-1f8429ebf6d8.PNG)
+
 The Control Logic is shown below. There are six turns: wide right, tight right, right in place, left in 
 place, tight left, wide left. Roomba makes a wide right if left most sensor is 1 and front sensors are 0. Roomba makes a tight right if 
 left middle sensor is 1 and front sensors are 0. Roomba makes a right in place if left front sensor is 1. The logic is the same for the 
 left turns but with the right sensors. The bump sensor logic is the same as V1. So are the battery level and emergency stop states.
 
-[Alt text](martin_project2/images/obstacle_avoidV2.png)
-https://github.com/spm1200/Simulink_RoombaV2/blob/master/martin_project2/images/SAMPLE_file.PNG
+![obstacle_avoidv2](https://user-images.githubusercontent.com/25269143/32278945-a34d0ca4-beed-11e7-93e6-8561c3f4d584.PNG)
 
 See below YouTube video for a demo.
 
